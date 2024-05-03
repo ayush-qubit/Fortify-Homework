@@ -33,7 +33,6 @@ def solve(board):
                     if isValid(board, i, j, num):
                         board[i][j] = num
                         if solve(board):
-                            print('Valid sudoku')
                             return True
                         board[i][j] = 0
                 return False
@@ -69,12 +68,22 @@ board2 = [
     [8, 5, 0, 0, 0, 0, 4, 0, 0]
 ]
 
+board3 = [[5, 3, 0, 0, 7, 0, 0, 0, 0],
+             [6, 0, 0, 1, 9, 5, 0, 0, 0],
+             [0, 9, 8, 0, 0, 0, 0, 6, 0],
+             [8, 0, 0, 0, 6, 0, 0, 0, 3],
+             [4, 0, 0, 8, 0, 3, 0, 0, 1],
+             [7, 0, 0, 0, 2, 0, 0, 0, 6],
+             [0, 6, 0, 0, 0, 0, 2, 8, 0],
+             [0, 0, 0, 4, 1, 9, 0, 0, 5],
+             [0, 0, 0, 0, 8, 0, 0, 7, 9]]
+
 print("Sudoku puzzle:")
-print_board(board1)
+print_board(board3)
 print("\nSolving...\n")
 
-if solve(board1):
+if solve(board3):
     print("Sudoku solved:")
-    print_board(board1)
+    print_board(board3)
 else:
     print("No solution exists.")
